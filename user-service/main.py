@@ -1,11 +1,14 @@
 from fastapi import FastAPI
 
+# from database import engine
+# from models import Base
+
+# Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-@app.get("/users")
-def get_users():
-    return {"users": ["Alice", "Bob", "Charlie"]}
-
-
-
+@app.get("/")
+def root():
+    return {
+        "status": "running"
+    }
